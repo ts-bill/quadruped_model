@@ -53,7 +53,6 @@ def legIK(x,y,z):
 
     D=(H**2-l3**2-l4**2)/(2*l3*l4)
     theta3=acos(D) #calf_theta
-
     theta2=atan2(z,G)-atan2(l4*sin(theta3),l3+l4*cos(theta3)) #thigh_theta
 
     print(theta1, theta2, theta3)
@@ -179,7 +178,10 @@ def drawRobot(Lp,bodyIk):
     p=[Trb@Ix@x for x in calcLegPoints(legIK(Q[0],Q[1],Q[2]))]
     drawLegPoints(p)
 
-# drawLegPoints(calcLegPoints(legIK(x,y,z)))
+#legIK(x,y,z)
+#-------------------------------------------------------------------
+setupView(110).view_init(elev=20., azim=135)
+drawLegPoints(calcLegPoints(legIK(x,y,z)))
 #-------------------------------------------------------------------
 
 # (Tlf,Trf,Tlb,Trb,Tm)=bodyIK(omega,phi,psi,xm,ym,zm)
@@ -194,7 +196,8 @@ def drawRobot(Lp,bodyIk):
 #          [CP[0][1],CP[1][1],CP[3][1], CP[2][1],CP[0][1]], 'bo-', lw=2)
 
 #-------------------------------------------------------------------
-setupView(200).view_init(elev=12., azim=28)
-drawRobot(Lp,bodyIK(0.3,0.1,-0.4,xm,ym,zm))
+#setupView(200).view_init(elev=12., azim=28)
+#drawRobot(Lp,bodyIK(0.3,0.1,-0.4,xm,ym,zm))
+
 plt.show()
 print("OK")
