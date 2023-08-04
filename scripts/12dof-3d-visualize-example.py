@@ -4,7 +4,7 @@ from math import *
 import matplotlib.pyplot as plt
 
 l1=25
-l2=20
+l2=0
 l3=80
 l4=80
 
@@ -81,6 +81,7 @@ def drawLegPoints(p):
     plt.plot([p[2][0]],[p[2][2]],[p[2][1]],'bo',lw=2)
     plt.plot([p[3][0]],[p[3][2]],[p[3][1]],'bo',lw=2)
     plt.plot([p[4][0]],[p[4][2]],[p[4][1]],'ro',lw=2)
+    print("foot point", "X=", p[4][0], "Y=", p[4][2], "Z=", p[4][1],)
     
 def bodyIK(omega,phi,psi,xm,ym,zm):
 
